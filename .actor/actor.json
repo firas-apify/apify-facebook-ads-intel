@@ -1,0 +1,13 @@
+{
+    "actorSpecification": 1,
+    "name": "facebook-ads-creative-intelligence",
+    "title": "Facebook Ads Creative Intelligence",
+    "description": "Scrapes Facebook Ads Library and delivers creative-level intelligence: ad angles, format mix, CTA patterns, and competitor ad fatigue signals.",
+    "version": "1.0",
+    "buildTag": "latest",
+    "meta": {
+        "templateId": "python-playwright"
+    },
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile"
+}

@@ -1,0 +1,89 @@
+{
+    "title": "Facebook Ads Creative Intelligence Input",
+    "description": "Configure the Facebook Ads Library scraper and intelligence extractor",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "advertiser_ids": {
+            "title": "Advertiser Page IDs",
+            "description": "List of Facebook Page IDs to monitor for ads. Find page IDs in the URL when viewing a page on Facebook Ads Library.",
+            "type": "array",
+            "editor": "stringList",
+            "items": {
+                "type": "string"
+            },
+            "default": [],
+            "prefill": []
+        },
+        "search_terms": {
+            "title": "Search Keywords",
+            "description": "Keywords to search for in ads. The scraper will find ads containing these terms.",
+            "type": "array",
+            "editor": "stringList",
+            "items": {
+                "type": "string"
+            },
+            "default": [],
+            "prefill": []
+        },
+        "country_code": {
+            "title": "Country Code",
+            "description": "ISO country code for geo-targeting (e.g., US, GB, DE, FR)",
+            "type": "string",
+            "editor": "textfield",
+            "default": "US",
+            "prefill": "US"
+        },
+        "ad_status": {
+            "title": "Ad Status Filter",
+            "description": "Filter ads by their current status",
+            "type": "string",
+            "editor": "select",
+            "enum": ["active", "inactive", "all"],
+            "enumTitles": ["Active ads only", "Inactive ads only", "All ads"],
+            "default": "active",
+            "prefill": "active"
+        },
+        "start_date": {
+            "title": "Start Date",
+            "description": "Filter ads that started running on or after this date (YYYY-MM-DD)",
+            "type": "string",
+            "editor": "textfield",
+            "nullable": true
+        },
+        "end_date": {
+            "title": "End Date",
+            "description": "Filter ads that started running on or before this date (YYYY-MM-DD)",
+            "type": "string",
+            "editor": "textfield",
+            "nullable": true
+        },
+        "max_ads_per_advertiser": {
+            "title": "Max Ads per Advertiser",
+            "description": "Maximum number of ads to collect per advertiser (1-1000)",
+            "type": "integer",
+            "editor": "number",
+            "minimum": 1,
+            "maximum": 1000,
+            "default": 100,
+            "prefill": 100
+        },
+        "include_media_urls": {
+            "title": "Include Media URLs",
+            "description": "Whether to extract and include media (image/video) URLs in the output",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true,
+            "prefill": true
+        },
+        "classify_ads": {
+            "title": "Classify Ads",
+            "description": "Enable AI-powered classification of ad angles, hooks, and offer types",
+            "type": "boolean",
+            "editor": "checkbox",
+            "default": true,
+            "prefill": true
+        }
+    },
+    "required": []
+}
